@@ -11,6 +11,19 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        primary: {
+          50: '#f0fdfe',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#26d0ce',
+          500: '#4fc1c6',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+        },
+        accent: '#4fc1c6',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

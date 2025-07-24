@@ -62,7 +62,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-8" />
+          <div className="w-24 h-1 bg-accent mx-auto mb-8" />
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Let's collaborate and bring your ideas to life. I'm always excited to work on new projects!
           </p>
@@ -96,14 +96,14 @@ const Contact = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                   whileHover={{ scale: 1.05, x: 10 }}
-                  className="flex items-center space-x-4 p-4 bg-gray-900/50 rounded-lg border border-gray-800 hover:border-yellow-500/50 transition-all duration-300 group cursor-pointer"
+                  className="flex items-center space-x-4 p-4 bg-gray-900/50 rounded-lg border border-gray-800 hover:border-accent/50 transition-all duration-300 group cursor-pointer"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center group-hover:bg-yellow-500/30 transition-colors duration-300">
-                    <info.icon className="w-6 h-6 text-yellow-400" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-300">
+                    <info.icon className="w-6 h-6 text-accent" />
                   </div>
                   <div>
                     <h4 className="text-white font-medium">{info.title}</h4>
-                    <p className="text-gray-300 group-hover:text-yellow-400 transition-colors duration-300">
+                    <p className="text-gray-300 group-hover:text-accent transition-colors duration-300">
                       {info.value}
                     </p>
                   </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-accent focus:outline-none transition-colors duration-300"
                   placeholder="Your Name"
                 />
               </div>
@@ -147,7 +147,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-accent focus:outline-none transition-colors duration-300"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -163,7 +163,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-yellow-500 focus:outline-none transition-colors duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-accent focus:outline-none transition-colors duration-300 resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>

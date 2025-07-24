@@ -123,7 +123,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-lg md:text-xl text-yellow-400 font-medium"
+              className="text-lg md:text-xl text-accent font-medium"
             >
               Hello, I'm
             </motion.h2>
@@ -145,7 +145,7 @@ const Hero = () => {
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 1, repeat: Infinity }}
-                className="text-yellow-400"
+                className="text-accent"
               >
                 |
               </motion.span>
@@ -156,7 +156,7 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="max-w-3xl mx-auto">
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               Passionate developer driven by curiosity and a love for innovation. I specialize in building 
-              <span className="text-yellow-400 font-semibold"> responsive, high-performance web apps</span> using 
+              <span className="text-accent font-semibold"> responsive, high-performance web apps</span> using 
               modern frameworks like Next.js, React.js, Angular, Svelte, and Tailwind CSS.
             </p>
           </motion.div>
@@ -198,7 +198,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="p-3 bg-gray-800 hover:bg-yellow-500 text-white hover:text-black rounded-lg transition-all duration-300 glow-yellow hover:shadow-yellow-500/50"
+                className="p-3 bg-gray-800 hover:bg-accent text-white hover:text-black rounded-lg transition-all duration-300 glow-cyan hover:shadow-accent/50"
                 aria-label={social.label}
               >
                 <social.icon className="w-6 h-6" />
@@ -219,7 +219,7 @@ const Hero = () => {
           onClick={() => scrollToSection('#about')}
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
+          className="text-accent hover:text-primary-400 transition-colors duration-300"
           aria-label="Scroll to about section"
         >
           <ChevronDown className="w-8 h-8" />

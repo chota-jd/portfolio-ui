@@ -4,6 +4,7 @@
   :root {
     --background: #000000;
     --foreground: #ffffff;
+    --accent: #4fc1c6;
   }
 
   html {
@@ -28,25 +29,25 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #eab308;
+    background: #4fc1c6;
     border-radius: 9999px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #facc15;
+    background: #26d0ce;
   }
 }
 
 @layer components {
   .gradient-text {
-    background: linear-gradient(to right, #facc15, #eab308);
+    background: linear-gradient(to right, #4fc1c6, #26d0ce);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
   
-  .glow-yellow {
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(79, 193, 198, 0.3);
   }
   
   .card-hover {
@@ -55,11 +56,11 @@
   
   .card-hover:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
+    box-shadow: 0 10px 25px rgba(79, 193, 198, 0.2);
   }
   
   .btn-primary {
-    background: #eab308;
+    background: #4fc1c6;
     color: #000000;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -71,14 +72,14 @@
   }
   
   .btn-primary:hover {
-    background: #facc15;
+    background: #26d0ce;
     transform: scale(1.05);
-    box-shadow: 0 10px 40px rgba(251, 191, 36, 0.4);
+    box-shadow: 0 10px 40px rgba(79, 193, 198, 0.4);
   }
   
   .btn-secondary {
-    border: 2px solid #eab308;
-    color: #eab308;
+    border: 2px solid #4fc1c6;
+    color: #4fc1c6;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -90,7 +91,7 @@
   }
   
   .btn-secondary:hover {
-    background: #eab308;
+    background: #4fc1c6;
     color: #000000;
     transform: scale(1.05);
   }

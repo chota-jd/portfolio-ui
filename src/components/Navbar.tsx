@@ -39,8 +39,8 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/95 backdrop-blur-md shadow-lg shadow-yellow-500/10' : 'bg-transparent'
+              className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-black/95 backdrop-blur-md shadow-lg shadow-accent/10' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,10 +77,10 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ scale: 1.1 }}
-                  className="text-white hover:text-yellow-400 px-3 py-2 text-sm font-medium transition-all duration-300 cursor-pointer relative group"
+                  className="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-all duration-300 cursor-pointer relative group"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
                 </motion.a>
               ))}
             </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-yellow-400 p-2"
+              className="text-white hover:text-accent p-2"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -122,7 +122,7 @@ const Navbar = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="text-white hover:text-yellow-400 block px-3 py-2 text-base font-medium transition-all duration-300 cursor-pointer border-l-2 border-transparent hover:border-yellow-400"
+              className="text-white hover:text-accent block px-3 py-2 text-base font-medium transition-all duration-300 cursor-pointer border-l-2 border-transparent hover:border-accent"
             >
               {item.name}
             </motion.a>

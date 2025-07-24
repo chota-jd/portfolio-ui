@@ -55,7 +55,7 @@ const About = () => {
           </motion.h2>
           <motion.div 
             variants={itemVariants}
-            className="w-24 h-1 bg-yellow-500 mx-auto"
+            className="w-24 h-1 bg-accent mx-auto"
           />
         </motion.div>
 
@@ -80,15 +80,15 @@ const About = () => {
               </p>
               
               <p className="text-lg">
-                I specialize in building <span className="text-yellow-400 font-semibold">responsive, 
+                I specialize in building                 <span className="text-accent font-semibold">responsive, 
                 high-performance web applications</span> using cutting-edge frameworks like 
                 Next.js, React.js, Angular, and Svelte. My focus is always on crafting 
                 seamless user experiences through clean, maintainable code and scalable architecture.
               </p>
               
               <p className="text-lg">
-                On the backend, I work extensively with <span className="text-yellow-400 font-semibold">Firebase</span> for 
-                real-time data, authentication, and hosting, as well as <span className="text-yellow-400 font-semibold">MySQL</span> for 
+                On the backend, I work extensively with <span className="text-accent font-semibold">Firebase</span> for 
+                real-time data, authentication, and hosting, as well as <span className="text-accent font-semibold">MySQL</span> for 
                 efficient database management. I believe in continuous learning and staying 
                 updated with the latest industry trends.
               </p>
@@ -100,7 +100,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="pt-6"
             >
-              <blockquote className="border-l-4 border-yellow-500 pl-6 italic text-gray-300">
+              <blockquote className="border-l-4 border-accent pl-6 italic text-gray-300">
                 "Always learning, always evolving—I'm excited to collaborate, share ideas, 
                 and help shape the future of tech."
               </blockquote>
@@ -119,10 +119,10 @@ const About = () => {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 p-1"
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-primary-400 p-1"
               >
                 <div className="w-full h-full bg-gray-800 rounded-full flex items-center justify-center">
-                  <div className="text-6xl text-yellow-400">👨‍💻</div>
+                  <div className="text-6xl text-accent">👨‍💻</div>
                 </div>
               </motion.div>
               
@@ -130,12 +130,12 @@ const About = () => {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-500/20 rounded-full blur-xl"
+                className="absolute -top-4 -right-4 w-16 h-16 bg-accent/20 rounded-full blur-xl"
               />
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -bottom-4 -left-4 w-20 h-20 bg-yellow-400/15 rounded-full blur-xl"
+                className="absolute -bottom-4 -left-4 w-20 h-20 bg-primary-400/15 rounded-full blur-xl"
               />
             </div>
 
@@ -148,14 +148,14 @@ const About = () => {
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gray-800/50 p-6 rounded-xl text-center border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 card-hover"
+                  className="bg-gray-800/50 p-6 rounded-xl text-center border border-gray-700/50 hover:border-accent/50 transition-all duration-300 card-hover"
                 >
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
-                    className="inline-flex items-center justify-center w-12 h-12 bg-yellow-500/20 rounded-lg mb-4"
+                    className="inline-flex items-center justify-center w-12 h-12 bg-accent/20 rounded-lg mb-4"
                   >
-                    <stat.icon className="w-6 h-6 text-yellow-400" />
+                    <stat.icon className="w-6 h-6 text-accent" />
                   </motion.div>
                   <h4 className="text-2xl font-bold text-white mb-2">{stat.number}</h4>
                   <p className="text-gray-400 text-sm">{stat.label}</p>

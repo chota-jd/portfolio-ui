@@ -56,7 +56,7 @@ const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             My <span className="gradient-text">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-8" />
+          <div className="w-24 h-1 bg-accent mx-auto mb-8" />
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Here are some of my recent projects that showcase my skills and passion for development
           </p>
@@ -70,7 +70,7 @@ const Projects = () => {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 group"
+              className="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-accent/50 transition-all duration-300 group"
             >
               {/* Project Image */}
               <div className="h-48 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">
@@ -78,7 +78,7 @@ const Projects = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h3>
                 
@@ -91,7 +91,7 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-sm rounded-full border border-yellow-500/30"
+                      className="px-3 py-1 bg-accent/20 text-accent text-sm rounded-full border border-accent/30"
                     >
                       {tech}
                     </span>
@@ -104,7 +104,7 @@ const Projects = () => {
                     href={project.github}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-yellow-500 text-white hover:text-black rounded-lg transition-all duration-300"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-accent text-white hover:text-black rounded-lg transition-all duration-300"
                   >
                     <Github className="w-4 h-4" />
                     Code
@@ -113,7 +113,7 @@ const Projects = () => {
                     href={project.demo}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black rounded-lg transition-all duration-300"
+                    className="flex items-center gap-2 px-4 py-2 border-2 border-accent text-accent hover:bg-accent hover:text-black rounded-lg transition-all duration-300"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Demo

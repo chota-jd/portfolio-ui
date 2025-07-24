@@ -43,7 +43,7 @@ const Footer = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.2, y: -5 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 bg-gray-800 hover:bg-yellow-500 text-white hover:text-black rounded-lg transition-all duration-300"
+                className="p-3 bg-gray-800 hover:bg-accent text-white hover:text-black rounded-lg transition-all duration-300"
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
@@ -59,7 +59,7 @@ const Footer = () => {
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   whileHover={{ scale: 1.05 }}
-                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-300"
+                  className="text-gray-400 hover:text-accent transition-colors duration-300"
                   onClick={(e) => {
                     e.preventDefault();
                     const element = document.querySelector(`#${item.toLowerCase()}`);
