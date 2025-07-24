@@ -7,7 +7,7 @@ import { Code, Users, Coffee, Award } from 'lucide-react';
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true });
 
   const stats = [
     { icon: Code, number: '50+', label: 'Projects Completed' },
