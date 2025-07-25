@@ -76,37 +76,72 @@ const Hero = () => {
           animate={{
             x: [0, 100, 0],
             y: [0, -100, 0],
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
           }}
           transition={{
             duration: 20,
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-1/4 left-1/4 w-72 h-72 bg-yellow-500/5 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl floating-element pulse-glow"
         />
         <motion.div
           animate={{
             x: [0, -150, 0],
             y: [0, 150, 0],
+            scale: [1, 0.8, 1],
+            rotate: [360, 0, 360],
           }}
           transition={{
             duration: 25,
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-3/4 right-1/4 w-96 h-96 bg-yellow-400/3 rounded-full blur-3xl"
+          className="absolute top-3/4 right-1/4 w-96 h-96 bg-primary-400/3 rounded-full blur-3xl floating-delayed"
         />
         <motion.div
           animate={{
             x: [0, 200, 0],
             y: [0, -200, 0],
+            scale: [1, 1.5, 1],
+            rotate: [0, -180, 0],
           }}
           transition={{
             duration: 30,
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-yellow-600/4 rounded-full blur-3xl"
+          className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-primary-600/4 rounded-full blur-3xl floating-slow"
+        />
+        
+        {/* Additional floating particles */}
+        <motion.div
+          animate={{
+            x: [0, 50, -50, 0],
+            y: [0, -50, -25, 0],
+            scale: [1, 1.3, 0.8, 1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/2 right-1/3 w-32 h-32 bg-accent/10 rounded-full blur-2xl"
+        />
+        
+        <motion.div
+          animate={{
+            x: [0, -80, 80, 0],
+            y: [0, 80, -80, 0],
+            rotate: [0, 360, 0],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-1/3 left-2/3 w-24 h-24 bg-primary-300/8 rounded-full blur-xl"
         />
       </div>
 
@@ -134,7 +169,14 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.2 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4"
             >
-              Your <span className="gradient-text">Name</span>
+              Your <span className="gradient-text text-glow">Name</span>
+              <motion.span 
+                className="wave-animation inline-block ml-4"
+                animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+              >
+                👋
+              </motion.span>
             </motion.h1>
           </motion.div>
 
@@ -217,9 +259,20 @@ const Hero = () => {
       >
         <motion.button
           onClick={() => scrollToSection('#about')}
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="text-accent hover:text-primary-400 transition-colors duration-300"
+          animate={{ 
+            y: [0, 10, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 2, 
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          whileHover={{ 
+            scale: 1.2,
+            rotate: [0, -10, 10, 0]
+          }}
+          className="text-accent hover:text-primary-400 transition-colors duration-300 bounce-gentle"
           aria-label="Scroll to about section"
         >
           <ChevronDown className="w-8 h-8" />

@@ -79,7 +79,9 @@ const Projects = () => {
 
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-300">
-                  {project.title}
+                  <span className="group-hover:text-shimmer">
+                    {project.title}
+                  </span>
                 </h3>
                 
                 <p className="text-gray-300 mb-4 leading-relaxed">

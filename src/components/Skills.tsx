@@ -121,7 +121,7 @@ const Skills = () => {
                           delay: (categoryIndex * 0.2) + (skillIndex * 0.1),
                           ease: "easeOut"
                         }}
-                        className="h-full bg-gradient-to-r from-accent to-primary-400 rounded-full relative"
+                        className="h-full bg-gradient-to-r from-accent to-primary-400 rounded-full relative progress-bar"
                       >
                         <motion.div
                           animate={{ x: [-10, 10, -10] }}
@@ -157,8 +157,12 @@ const Skills = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                 transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                whileHover={{ scale: 1.2, rotate: 360 }}
-                className="bg-gray-800 px-4 py-2 rounded-lg text-accent font-medium border border-gray-700 hover:border-accent/50 transition-all duration-300 cursor-default"
+                whileHover={{ 
+                  scale: 1.2, 
+                  rotate: 360,
+                  boxShadow: "0 0 20px rgba(79, 193, 198, 0.5)"
+                }}
+                className="bg-gray-800 px-4 py-2 rounded-lg text-accent font-medium border border-gray-700 hover:border-accent/50 transition-all duration-300 cursor-default pulse-glow"
               >
                 {tech}
               </motion.div>

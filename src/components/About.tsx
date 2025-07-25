@@ -122,7 +122,20 @@ const About = () => {
                 className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-primary-400 p-1"
               >
                 <div className="w-full h-full bg-gray-800 rounded-full flex items-center justify-center">
-                  <div className="text-6xl text-accent">👨‍💻</div>
+                  <motion.div 
+                    className="text-6xl text-accent"
+                    animate={{ 
+                      scale: [1, 1.1, 1],
+                      rotate: [0, 5, -5, 0] 
+                    }}
+                    transition={{ 
+                      duration: 4, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    👨‍💻
+                  </motion.div>
                 </div>
               </motion.div>
               
@@ -136,6 +149,26 @@ const About = () => {
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -bottom-4 -left-4 w-20 h-20 bg-primary-400/15 rounded-full blur-xl"
+              />
+              
+              {/* Additional floating elements */}
+              <motion.div
+                animate={{ 
+                  x: [0, 20, -20, 0],
+                  y: [0, -15, 15, 0],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{ duration: 8, repeat: Infinity }}
+                className="absolute top-1/2 -right-8 w-12 h-12 bg-accent/10 rounded-full blur-md"
+              />
+              
+              <motion.div
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.8, 0.3]
+                }}
+                transition={{ duration: 5, repeat: Infinity }}
+                className="absolute bottom-1/3 -left-8 w-16 h-16 bg-primary-200/10 rounded-full blur-lg"
               />
             </div>
 
