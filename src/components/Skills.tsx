@@ -100,7 +100,7 @@ const Skills = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-              className="bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-accent/50 transition-all duration-300"
+              className="bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10"
             >
               <h3 className="text-2xl font-semibold text-white mb-6 text-center">
                 {category.title}
@@ -110,9 +110,26 @@ const Skills = () => {
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300 font-medium">{skill.name}</span>
-                      <span className="text-accent font-semibold">{skill.level}%</span>
+                      <motion.span 
+                        className="text-accent font-semibold"
+                        animate={{ 
+                          scale: [1, 1.05, 1],
+                          textShadow: [
+                            "0 0 0px rgba(79, 193, 198, 0)",
+                            "0 0 8px rgba(79, 193, 198, 0.6)",
+                            "0 0 0px rgba(79, 193, 198, 0)"
+                          ]
+                        }}
+                        transition={{ 
+                          duration: 2, 
+                          repeat: Infinity,
+                          delay: (categoryIndex * 0.3) + (skillIndex * 0.2)
+                        }}
+                      >
+                        {skill.level}%
+                      </motion.span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                    <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden border border-gray-600 hover:border-accent/30 transition-colors duration-300">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
@@ -122,11 +139,14 @@ const Skills = () => {
                           ease: "easeOut"
                         }}
                         className="h-full bg-gradient-to-r from-accent to-primary-400 rounded-full relative progress-bar"
+                        style={{
+                          boxShadow: '0 0 8px rgba(79, 193, 198, 0.3)'
+                        }}
                       >
                         <motion.div
                           animate={{ x: [-10, 10, -10] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute right-0 top-0 w-1 h-full bg-primary-300 opacity-75"
+                          className="absolute right-0 top-0 w-1 h-full bg-accent opacity-90"
                         />
                       </motion.div>
                     </div>
