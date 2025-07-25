@@ -110,24 +110,9 @@ const Skills = () => {
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300 font-medium">{skill.name}</span>
-                      <motion.span 
-                        className="text-accent font-semibold"
-                        animate={{ 
-                          scale: [1, 1.05, 1],
-                          textShadow: [
-                            "0 0 0px rgba(79, 193, 198, 0)",
-                            "0 0 8px rgba(79, 193, 198, 0.6)",
-                            "0 0 0px rgba(79, 193, 198, 0)"
-                          ]
-                        }}
-                        transition={{ 
-                          duration: 2, 
-                          repeat: Infinity,
-                          delay: (categoryIndex * 0.3) + (skillIndex * 0.2)
-                        }}
-                      >
+                      <span className="font-semibold" style={{ color: '#4fc1c6' }}>
                         {skill.level}%
-                      </motion.span>
+                      </span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden border border-gray-600 hover:border-accent/30 transition-colors duration-300">
                       <motion.div
@@ -138,16 +123,12 @@ const Skills = () => {
                           delay: (categoryIndex * 0.2) + (skillIndex * 0.1),
                           ease: "easeOut"
                         }}
-                        className="h-full bg-gradient-to-r from-accent to-primary-400 rounded-full relative progress-bar"
+                        className="h-full rounded-full relative"
                         style={{
-                          boxShadow: '0 0 8px rgba(79, 193, 198, 0.3)'
+                          backgroundColor: '#4fc1c6'
                         }}
                       >
-                        <motion.div
-                          animate={{ x: [-10, 10, -10] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute right-0 top-0 w-1 h-full bg-accent opacity-90"
-                        />
+
                       </motion.div>
                     </div>
                   </div>
