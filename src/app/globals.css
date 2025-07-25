@@ -237,6 +237,46 @@
   .backdrop-blur-md {
     backdrop-filter: blur(8px);
   }
+  
+  /* Comprehensive #4fc1c6 Color Utilities */
+  .text-theme {
+    color: #4fc1c6;
+  }
+  
+  .bg-theme {
+    background-color: #4fc1c6;
+  }
+  
+  .border-theme {
+    border-color: #4fc1c6;
+  }
+  
+  .shadow-theme {
+    box-shadow: 0 0 20px rgba(79, 193, 198, 0.3);
+  }
+  
+  .shadow-theme-lg {
+    box-shadow: 0 0 40px rgba(79, 193, 198, 0.5);
+  }
+  
+  .glow-theme {
+    text-shadow: 0 0 15px #4fc1c6;
+  }
+  
+  .hover-theme:hover {
+    color: #4fc1c6;
+    transition: color 0.3s ease;
+  }
+  
+  .hover-bg-theme:hover {
+    background-color: #4fc1c6;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hover-border-theme:hover {
+    border-color: #4fc1c6;
+    transition: border-color 0.3s ease;
+  }
 }
 
 /* Keyframe Animations */
