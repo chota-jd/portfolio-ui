@@ -4,7 +4,7 @@
   :root {
     --background: #000000;
     --foreground: #ffffff;
-    --accent: #4fc1c6;
+    --accent: #eab308;
   }
 
   html {
@@ -29,18 +29,18 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #4fc1c6;
+    background: #eab308;
     border-radius: 9999px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #26d0ce;
+    background: #facc15;
   }
 }
 
 @layer components {
   .gradient-text {
-    background: linear-gradient(45deg, #4fc1c6, #26d0ce, #5eead4, #4fc1c6);
+    background: linear-gradient(45deg, #eab308, #facc15, #fde047, #eab308);
     background-size: 400% 400%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -48,8 +48,8 @@
     animation: gradientShift 3s ease infinite;
   }
   
-  .glow-cyan {
-    box-shadow: 0 0 20px rgba(79, 193, 198, 0.3);
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
     animation: glowPulse 2s ease-in-out infinite alternate;
   }
   
@@ -66,13 +66,13 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(79, 193, 198, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.1), transparent);
     transition: left 0.6s;
   }
   
   .card-hover:hover {
     transform: scale(1.05) rotateY(5deg);
-    box-shadow: 0 20px 40px rgba(79, 193, 198, 0.3);
+    box-shadow: 0 20px 40px rgba(234, 179, 8, 0.3);
   }
   
   .card-hover:hover::before {
@@ -80,7 +80,7 @@
   }
   
   .btn-primary {
-    background: linear-gradient(45deg, #4fc1c6, #26d0ce);
+    background: linear-gradient(45deg, #eab308, #facc15);
     color: #000000;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -105,9 +105,9 @@
   }
   
   .btn-primary:hover {
-    background: linear-gradient(45deg, #26d0ce, #5eead4);
+    background: linear-gradient(45deg, #facc15, #fde047);
     transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 10px 40px rgba(79, 193, 198, 0.4);
+    box-shadow: 0 10px 40px rgba(234, 179, 8, 0.4);
   }
   
   .btn-primary:hover::before {
@@ -115,8 +115,8 @@
   }
   
   .btn-secondary {
-    border: 2px solid #4fc1c6;
-    color: #4fc1c6;
+    border: 2px solid #eab308;
+    color: #eab308;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -136,7 +136,7 @@
     left: 50%;
     width: 0;
     height: 0;
-    background: #4fc1c6;
+    background: #eab308;
     border-radius: 50%;
     transition: all 0.4s ease;
     transform: translate(-50%, -50%);
@@ -146,8 +146,8 @@
   .btn-secondary:hover {
     color: #000000;
     transform: scale(1.05) translateY(-2px);
-    border-color: #26d0ce;
-    box-shadow: 0 10px 30px rgba(79, 193, 198, 0.3);
+    border-color: #facc15;
+    box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
   }
   
   .btn-secondary:hover::before {
@@ -227,7 +227,7 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 10px rgba(79, 193, 198, 0.5);
+    text-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
   }
   
   .backdrop-blur-sm {
@@ -238,43 +238,43 @@
     backdrop-filter: blur(8px);
   }
   
-  /* Comprehensive #4fc1c6 Color Utilities */
+  /* Comprehensive YELLOW Color Utilities */
   .text-theme {
-    color: #4fc1c6;
+    color: #eab308;
   }
   
   .bg-theme {
-    background-color: #4fc1c6;
+    background-color: #eab308;
   }
   
   .border-theme {
-    border-color: #4fc1c6;
+    border-color: #eab308;
   }
   
   .shadow-theme {
-    box-shadow: 0 0 20px rgba(79, 193, 198, 0.3);
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
   }
   
   .shadow-theme-lg {
-    box-shadow: 0 0 40px rgba(79, 193, 198, 0.5);
+    box-shadow: 0 0 40px rgba(234, 179, 8, 0.5);
   }
   
   .glow-theme {
-    text-shadow: 0 0 15px #4fc1c6;
+    text-shadow: 0 0 15px #eab308;
   }
   
   .hover-theme:hover {
-    color: #4fc1c6;
+    color: #eab308;
     transition: color 0.3s ease;
   }
   
   .hover-bg-theme:hover {
-    background-color: #4fc1c6;
+    background-color: #eab308;
     transition: background-color 0.3s ease;
   }
   
   .hover-border-theme:hover {
-    border-color: #4fc1c6;
+    border-color: #eab308;
     transition: border-color 0.3s ease;
   }
 }

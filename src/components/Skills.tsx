@@ -43,8 +43,8 @@ const AnimatedCounter = ({
 
   return (
     <motion.span 
-      className="font-bold text-2xl"
-      style={{ color: '#4fc1c6' }}
+      className="font-bold text-lg"
+      style={{ color: '#eab308' }}
       initial={{ opacity: 0, scale: 0.5, rotateY: -180 }}
       animate={{ 
         opacity: isInView ? 1 : 0,
@@ -59,16 +59,16 @@ const AnimatedCounter = ({
       }}
       whileHover={{ 
         scale: 1.2,
-        textShadow: "0 0 20px #4fc1c6",
+        textShadow: "0 0 20px #eab308",
         transition: { duration: 0.2 }
       }}
     >
       <motion.span
         animate={{
           textShadow: [
-            "0 0 0px #4fc1c6",
-            "0 0 10px #4fc1c6",
-            "0 0 0px #4fc1c6"
+            "0 0 0px #eab308",
+            "0 0 10px #eab308",
+            "0 0 0px #eab308"
           ]
         }}
         transition={{ duration: 2, repeat: Infinity }}
@@ -122,7 +122,7 @@ const FloatingParticle = ({ delay = 0, index = 0 }) => {
       }}
       className="absolute w-2 h-2 rounded-full pointer-events-none"
       style={{
-        background: `radial-gradient(circle, #4fc1c6, transparent)`,
+        background: `radial-gradient(circle, #eab308, transparent)`,
         filter: 'blur(1px)'
       }}
     />
@@ -173,7 +173,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-black relative overflow-hidden" ref={ref}>
+    <section id="skills" className="py-12 bg-black relative overflow-hidden" ref={ref}>
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Floating Particles */}
@@ -192,7 +192,7 @@ const Skills = () => {
           transition={{ duration: 20, repeat: Infinity }}
           className="absolute top-10 left-10 w-96 h-96 rounded-full opacity-5"
           style={{
-            background: `radial-gradient(circle, #4fc1c6, transparent 70%)`
+            background: `radial-gradient(circle, #eab308, transparent 70%)`
           }}
         />
         
@@ -206,23 +206,23 @@ const Skills = () => {
           transition={{ duration: 25, repeat: Infinity }}
           className="absolute bottom-10 right-10 w-80 h-80 rounded-full opacity-5"
           style={{
-            background: `radial-gradient(circle, #4fc1c6, transparent 70%)`
+            background: `radial-gradient(circle, #eab308, transparent 70%)`
           }}
         />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }}
-          className="text-center mb-20"
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-8"
         >
           <motion.h2 
             initial={{ opacity: 0, scale: 0.5 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-6xl md:text-7xl font-bold text-white mb-6"
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
           >
             <motion.span
               animate={{ 
@@ -237,7 +237,7 @@ const Skills = () => {
             <motion.span
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="inline-block ml-4 text-6xl"
+              className="inline-block ml-2 text-2xl"
             >
               ⚡
             </motion.span>
@@ -245,22 +245,22 @@ const Skills = () => {
           
           <motion.div 
             initial={{ width: 0 }}
-            animate={isInView ? { width: 200 } : { width: 0 }}
+            animate={isInView ? { width: 120 } : { width: 0 }}
             transition={{ duration: 1.5, delay: 0.5 }}
-            className="h-2 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-8 rounded-full"
+            className="h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-4 rounded-full"
           />
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+            className="text-base text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
             Technologies and tools I use to bring ideas to life with passion and precision
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -285,7 +285,7 @@ const Skills = () => {
                 rotateY: 5,
                 z: 50
               }}
-              className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 p-8 rounded-2xl border-2 border-gray-700 hover:border-accent/50 transition-all duration-500 backdrop-blur-sm relative overflow-hidden group"
+              className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 p-6 rounded-xl border-2 border-gray-700 hover:border-accent/50 transition-all duration-500 backdrop-blur-sm relative overflow-hidden group"
               style={{
                 boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
                 perspective: '1000px'
@@ -310,31 +310,31 @@ const Skills = () => {
               >
                 <motion.div
                   whileHover={{ 
-                    scale: 1.3,
+                    scale: 1.2,
                     rotate: 360,
-                    textShadow: "0 0 20px #4fc1c6"
+                    textShadow: "0 0 20px #eab308"
                   }}
-                  className="text-6xl mb-4 inline-block"
+                  className="text-3xl mb-3 inline-block"
                 >
                   {category.icon}
                 </motion.div>
                 
                 <motion.h3 
-                  className="text-3xl font-bold text-white mb-2"
+                  className="text-xl font-bold text-white mb-2"
                   whileHover={{ 
-                    scale: 1.1,
-                    color: "#4fc1c6"
+                    scale: 1.05,
+                    color: "#eab308"
                   }}
                 >
                   {category.title}
                 </motion.h3>
               </motion.div>
 
-              <div className="space-y-8">
+              <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div 
                     key={skill.name} 
-                    className="space-y-4"
+                    className="space-y-2"
                     initial={{ opacity: 0, x: -50 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                     transition={{ 
@@ -344,9 +344,9 @@ const Skills = () => {
                   >
                     <div className="flex justify-between items-center">
                       <motion.span 
-                        className="text-gray-300 font-semibold text-lg"
+                        className="text-gray-300 font-semibold text-sm"
                         whileHover={{ 
-                          color: "#4fc1c6",
+                          color: "#eab308",
                           scale: 1.05,
                           x: 10
                         }}
@@ -363,10 +363,10 @@ const Skills = () => {
                     {/* Spectacular Progress Bar */}
                     <div className="relative">
                       <motion.div 
-                        className="w-full bg-gray-700/50 rounded-full h-4 overflow-hidden border-2 border-gray-600/50 backdrop-blur-sm"
+                        className="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden border border-gray-600/50 backdrop-blur-sm"
                         whileHover={{ 
                           scale: 1.02,
-                          borderColor: "#4fc1c6"
+                          borderColor: "#eab308"
                         }}
                       >
                         <motion.div
@@ -385,8 +385,8 @@ const Skills = () => {
                           }}
                           className="h-full rounded-full relative overflow-hidden"
                           style={{
-                            background: `linear-gradient(90deg, #4fc1c6, #26d0ce, #4fc1c6)`,
-                            boxShadow: '0 0 20px rgba(79, 193, 198, 0.5)'
+                            background: `linear-gradient(90deg, #eab308, #facc15, #eab308)`,
+                            boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)'
                           }}
                         >
                           {/* Moving Shine Effect */}
@@ -412,7 +412,7 @@ const Skills = () => {
                             }}
                             className="absolute right-0 top-0 w-4 h-full rounded-full"
                             style={{
-                              background: 'radial-gradient(circle, #ffffff, #4fc1c6)',
+                              background: 'radial-gradient(circle, #ffffff, #eab308)',
                               filter: 'blur(1px)'
                             }}
                           />
@@ -436,8 +436,8 @@ const Skills = () => {
                         }}
                         className="absolute -top-2 w-4 h-4 rounded-full border-2 border-white"
                         style={{
-                          backgroundColor: '#4fc1c6',
-                          boxShadow: '0 0 10px #4fc1c6'
+                          backgroundColor: '#eab308',
+                          boxShadow: '0 0 10px #eab308'
                         }}
                       />
                     </div>
@@ -453,15 +453,15 @@ const Skills = () => {
           initial={{ opacity: 0, y: 100 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
           transition={{ duration: 1.5, delay: 1.5 }}
-          className="mt-20 text-center"
+          className="mt-10 text-center"
         >
           <motion.h3 
-            className="text-4xl font-bold text-white mb-12"
+            className="text-2xl font-bold text-white mb-6"
             animate={{ 
               textShadow: [
-                "0 0 0px #4fc1c6",
-                "0 0 20px #4fc1c6", 
-                "0 0 0px #4fc1c6"
+                "0 0 0px #eab308",
+                "0 0 20px #eab308", 
+                "0 0 0px #eab308"
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}

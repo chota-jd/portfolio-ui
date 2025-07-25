@@ -328,7 +328,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="p-3 bg-gray-800 hover:bg-accent text-white hover:text-black rounded-lg transition-all duration-300 glow-cyan hover:shadow-accent/50"
+                className="p-3 bg-gray-800 hover:bg-accent text-white hover:text-black rounded-lg transition-all duration-300 glow-yellow hover:shadow-accent/50"
                 aria-label={social.label}
               >
                 <social.icon className="w-6 h-6" />
