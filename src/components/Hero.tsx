@@ -152,6 +152,94 @@ const Hero = () => {
           animate="visible"
           className="space-y-8"
         >
+          {/* Personal Photo Section */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, rotateY: 180 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ duration: 1.2, delay: 0.5, type: "spring", stiffness: 100 }}
+            className="relative mx-auto mb-8"
+          >
+            <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
+              {/* Rotating Border Animation */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-accent via-primary-400 to-accent p-1"
+              >
+                <div className="w-full h-full bg-black rounded-full"></div>
+              </motion.div>
+              
+              {/* Profile Image Container */}
+              <motion.div
+                whileHover={{ scale: 1.1, rotateY: 10 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-2 rounded-full overflow-hidden border-4 border-accent/30 backdrop-blur-sm"
+              >
+                                 {/* Your Personal Photo - Add your image to public/images/profile.jpg */}
+                 <motion.img
+                   src="/images/profile.jpg"
+                   alt="Your Profile Photo"
+                   className="w-full h-full object-cover"
+                   initial={{ scale: 1.2, filter: "blur(4px)" }}
+                   animate={{ scale: 1, filter: "blur(0px)" }}
+                   transition={{ duration: 1, delay: 1 }}
+                   whileHover={{ scale: 1.05 }}
+                   onError={(e) => {
+                     // Fallback to a default avatar if image not found
+                     e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='%23374151'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='120' fill='%234fc1c6' text-anchor='middle' dy='.3em'%3E👤%3C/text%3E%3C/svg%3E";
+                   }}
+                 />
+                
+                {/* Overlay effect on hover */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent"
+                />
+              </motion.div>
+              
+              {/* Floating Elements around photo */}
+              <motion.div
+                animate={{ 
+                  y: [-10, 10, -10],
+                  rotate: [0, 360, 0]
+                }}
+                transition={{ duration: 8, repeat: Infinity }}
+                className="absolute -top-4 -right-4 w-8 h-8 bg-accent/30 rounded-full blur-sm"
+              />
+              
+              <motion.div
+                animate={{ 
+                  y: [10, -10, 10],
+                  x: [-5, 5, -5],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{ duration: 6, repeat: Infinity }}
+                className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary-300/40 rounded-full blur-sm"
+              />
+              
+              <motion.div
+                animate={{ 
+                  rotate: [0, -360, 0],
+                  scale: [1, 0.8, 1]
+                }}
+                transition={{ duration: 10, repeat: Infinity }}
+                className="absolute top-1/2 -right-6 w-4 h-4 bg-accent/50 rounded-full blur-sm"
+              />
+            </div>
+            
+            {/* Status Indicator */}
+            <motion.div
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="absolute bottom-4 right-1/2 transform translate-x-1/2 translate-y-1/2"
+            >
+              <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
+            </motion.div>
+          </motion.div>
           {/* Greeting */}
           <motion.div variants={itemVariants} className="space-y-4">
             <motion.h2 
