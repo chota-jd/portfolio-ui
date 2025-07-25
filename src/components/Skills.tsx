@@ -1,8 +1,58 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
+
+// Animated Counter Component
+const AnimatedCounter = ({ 
+  target, 
+  isInView, 
+  delay = 0 
+}: { 
+  target: number; 
+  isInView: boolean; 
+  delay?: number; 
+}) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const timer = setTimeout(() => {
+      const duration = 2000; // 2 seconds
+      const steps = 60; // 60 steps for smooth animation
+      const increment = target / steps;
+      let current = 0;
+
+      const counter = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          setCount(target);
+          clearInterval(counter);
+        } else {
+          setCount(Math.floor(current));
+        }
+      }, duration / steps);
+
+      return () => clearInterval(counter);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [target, isInView, delay]);
+
+  return (
+    <motion.span 
+      className="font-semibold" 
+      style={{ color: '#4fc1c6' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isInView ? 1 : 0 }}
+      transition={{ delay: delay / 1000 }}
+    >
+      {count}%
+    </motion.span>
+  );
+};
 
 const Skills = () => {
   const ref = useRef(null);
@@ -110,16 +160,18 @@ const Skills = () => {
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300 font-medium">{skill.name}</span>
-                      <span className="font-semibold" style={{ color: '#4fc1c6' }}>
-                        {skill.level}%
-                      </span>
+                      <AnimatedCounter 
+                        target={skill.level}
+                        isInView={isInView}
+                        delay={(categoryIndex * 200) + (skillIndex * 100)}
+                      />
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden border border-gray-600 hover:border-accent/30 transition-colors duration-300">
-                      <motion.div
+                                            <motion.div
                         initial={{ width: 0 }}
                         animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
                         transition={{ 
-                          duration: 1.5, 
+                          duration: 2, 
                           delay: (categoryIndex * 0.2) + (skillIndex * 0.1),
                           ease: "easeOut"
                         }}
@@ -128,7 +180,24 @@ const Skills = () => {
                           backgroundColor: '#4fc1c6'
                         }}
                       >
-
+                        {/* Subtle pulse effect at the end of progress bar */}
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={isInView ? { 
+                            opacity: [0, 1, 0],
+                            scale: [1, 1.2, 1]
+                          } : { opacity: 0 }}
+                          transition={{ 
+                            duration: 1.5,
+                            delay: (categoryIndex * 0.2) + (skillIndex * 0.1) + 1.5,
+                            repeat: 2
+                          }}
+                          className="absolute right-0 top-0 w-2 h-full rounded-full"
+                          style={{
+                            backgroundColor: '#4fc1c6',
+                            filter: 'brightness(1.5)'
+                          }}
+                        />
                       </motion.div>
                     </div>
                   </div>
