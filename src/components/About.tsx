@@ -112,7 +112,7 @@ export default function About() {
         />
       </div>
 
-      <div className="container-custom relative">
+      <div className="container-custom relative px-48 ">
         <motion.div
           variants={containerVariants}
           initial="hidden"
