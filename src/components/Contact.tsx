@@ -20,11 +20,11 @@ import {
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { submitContactForm, resetForm, type ContactFormData } from '../store/apps/contactMe';
 
-const schema = yup.object().shape({
+const schema: yup.ObjectSchema<any> = yup.object({
   name: yup.string().required('Name is required').min(2, 'Name must be at least 2 characters'),
   email: yup.string().required('Email is required').email('Please enter a valid email'),
-  phone: yup.string().optional(),
-  company: yup.string().optional(),
+  phone: yup.string().optional().default(''),
+  company: yup.string().optional().default(''),
   subject: yup.string().required('Subject is required').min(5, 'Subject must be at least 5 characters'),
   message: yup.string().required('Message is required').min(10, 'Message must be at least 10 characters'),
 });
@@ -49,7 +49,8 @@ export default function Contact() {
       company: '',
       subject: '',
       message: ''
-    }
+    },
+    mode: 'onChange'
   });
 
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
