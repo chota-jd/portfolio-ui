@@ -70,8 +70,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@chiragdev.com',
-      href: 'mailto:hello@chiragdev.com',
+      value: '12chiragprajapati12@gmail.com',
+      href: 'mailto:12chiragprajapati12@gmail.com',
       color: 'text-blue-400'
     },
     {
@@ -101,7 +101,7 @@ export default function Contact() {
     { icon: Github, href: 'https://github.com', label: 'GitHub', color: 'hover:text-gray-400' },
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-blue-400' },
     { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', color: 'hover:text-blue-500' },
-    { icon: Mail, href: 'mailto:hello@chiragdev.com', label: 'Email', color: 'hover:text-[#4fc1c6]' },
+    { icon: Mail, href: 'mailto:12chiragprajapati12@gmail.com', label: 'Email', color: 'hover:text-[#4fc1c6]' },
   ];
 
   const containerVariants: Variants = {
@@ -261,6 +261,24 @@ export default function Contact() {
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-white heading-spacing">Send a Message</h3>
 
+                {/* Development Notice for EmailJS Setup */}
+                {process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY === 'demo_public_key' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="content-spacing card-padding bg-yellow-500/10 border border-yellow-500/30 rounded-lg flex items-start gap-3"
+                  >
+                    <AlertCircle className="text-yellow-500 mt-0.5" size={20} />
+                    <div className="text-sm">
+                      <p className="text-yellow-400 font-medium">EmailJS Not Configured</p>
+                      <p className="text-yellow-300">
+                        Form will save to Firebase, but email notifications are disabled. 
+                        See <code className="bg-gray-800 px-1 rounded">EMAIL_SETUP_GUIDE.md</code> for setup instructions.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+
                 {/* Success Message */}
                 {submitted && (
                   <motion.div
@@ -271,7 +289,13 @@ export default function Contact() {
                     <CheckCircle className="text-green-500" size={24} />
                     <div>
                       <p className="text-green-400 font-medium text-spacing">Message sent successfully!</p>
-                      <p className="text-green-300 text-sm">I'll get back to you within 24 hours.</p>
+                      <p className="text-green-300 text-sm">
+                        Your message has been saved and I'll get back to you within 24 hours.
+                        {process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY !== 'demo_public_key' 
+                          ? ' Email notification sent to 12chiragprajapati12@gmail.com.'
+                          : ' (Email notifications will be enabled after EmailJS setup)'
+                        }
+                      </p>
                     </div>
                     <button
                       onClick={handleResetForm}
