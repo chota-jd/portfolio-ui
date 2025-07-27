@@ -103,8 +103,8 @@ export default function Projects() {
   ];
 
   const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+    ? projects.slice(0, 3) 
+    : projects.filter(project => project.category === activeFilter).slice(0, 3);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -341,31 +341,14 @@ export default function Projects() {
         {/* Projects Grid */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 grid-gap-xl"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-gap-xl max-w-7xl mx-auto"
         >
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </motion.div>
 
-        {/* View More Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="text-center content-spacing-xl"
-        >
-          <motion.button
-            className="btn-primary group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="flex items-center space-x-2">
-              <Github size={20} />
-              <span>View More on GitHub</span>
-            </span>
-          </motion.button>
-        </motion.div>
+
       </div>
     </section>
   );

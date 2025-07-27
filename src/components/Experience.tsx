@@ -74,25 +74,7 @@ export default function Experience() {
       color: 'from-pink-500 to-red-600',
       icon: Building
     },
-    {
-      id: 4,
-      company: 'FreelanceHub',
-      position: 'Freelance Developer',
-      period: '2018 - 2019',
-      location: 'Various',
-      type: 'Contract',
-      description: 'Worked with multiple clients on diverse projects ranging from e-commerce platforms to portfolio websites. Gained experience in client communication and project management.',
-      achievements: [
-        'Completed 25+ successful projects',
-        'Maintained 5-star rating across all platforms',
-        'Generated $50k+ in revenue',
-        'Built long-term relationships with 10+ clients'
-      ],
-      technologies: ['JavaScript', 'PHP', 'MySQL', 'WordPress', 'Bootstrap'],
-      color: 'from-yellow-500 to-orange-600',
-      icon: Users
-    },
-  ];
+  ].slice(0, 3);
 
   const stats = [
     { icon: Briefcase, value: '5+', label: 'Years Experience', color: 'text-blue-400' },
@@ -130,32 +112,11 @@ export default function Experience() {
     isLast: boolean 
   }) => (
     <motion.div
-      initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="relative"
+      className="relative h-full"
     >
-      {/* Timeline Line */}
-      {!isLast && (
-        <div className="absolute left-1/2 top-20 w-0.5 h-32 bg-gradient-to-b from-[#4fc1c6] to-transparent transform -translate-x-1/2 hidden lg:block" />
-      )}
-      
-      {/* Timeline Dot */}
-      <motion.div
-        className="absolute left-1/2 top-8 w-4 h-4 bg-[#4fc1c6] rounded-full transform -translate-x-1/2 hidden lg:block z-10"
-        initial={{ scale: 0 }}
-        animate={isInView ? { scale: 1 } : { scale: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
-      >
-        <motion.div
-          className="absolute inset-0 bg-[#4fc1c6] rounded-full"
-          animate={{ scale: [1, 1.5, 1] }}
-          transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-        />
-      </motion.div>
-
-      {/* Content Card */}
-      <div className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12 lg:ml-auto'}`}>
         <motion.div
           className="bg-gray-900/80 backdrop-blur-sm rounded-2xl card-padding-lg border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-500 group relative overflow-hidden"
           whileHover={{ scale: 1.02, y: -5 }}
@@ -235,7 +196,6 @@ export default function Experience() {
             ))}
           </div>
         </motion.div>
-      </div>
     </motion.div>
   );
 
@@ -311,9 +271,9 @@ export default function Experience() {
           ))}
         </motion.div>
 
-        {/* Experience Timeline */}
+        {/* Experience Grid */}
         <div className="relative">
-          <div className="space-y-24 lg:space-y-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-gap-xl max-w-7xl mx-auto">
             {experiences.map((experience, index) => (
               <ExperienceCard 
                 key={experience.id} 
@@ -325,42 +285,7 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="text-center mt-20"
-        >
-          <motion.div
-            className="inline-block p-8 bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800"
-            whileHover={{ scale: 1.02 }}
-          >
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Want to work together?
-            </h3>
-            <p className="text-gray-400 mb-6 max-w-md">
-              I'm always open to discussing new opportunities and exciting projects. 
-              Let's create something amazing together!
-            </p>
-            <motion.button
-              className="btn-primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const element = document.querySelector('#contact');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              <span className="flex items-center space-x-2">
-                <Briefcase size={20} />
-                <span>Get In Touch</span>
-              </span>
-            </motion.button>
-          </motion.div>
-        </motion.div>
+
       </div>
     </section>
   );
