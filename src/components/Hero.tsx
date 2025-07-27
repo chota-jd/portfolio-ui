@@ -54,7 +54,7 @@ export default function Hero() {
     <motion.section
       ref={ref}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black section-padding"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black"
       style={{ y, opacity, scale }}
     >
       {/* Animated Background */}
@@ -220,16 +220,16 @@ export default function Hero() {
 
           {/* Content */}
           <div className="lg:w-2/3">
-            <div className="space-y-6 lg:space-y-8">
+            <div className="space-y-8 lg:space-y-12">
               {/* Greeting */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="content-spacing"
+                className="content-spacing-lg"
               >
                 <motion.p
-                  className="text-[#4fc1c6] text-lg sm:text-xl font-medium text-spacing"
+                  className="text-[#4fc1c6] text-lg sm:text-xl font-medium text-spacing-lg"
                   animate={{ opacity: [0.7, 1, 0.7] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -237,14 +237,14 @@ export default function Hero() {
                 </motion.p>
                 
                 <motion.h1
-                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold heading-spacing-lg"
+                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold heading-spacing-xl"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.5 }}
                 >
                   <span className="text-gradient block">Chirag</span>
                   <motion.span
-                    className="block text-white mt-2"
+                    className="block text-white mt-4"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.8 }}
@@ -259,7 +259,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.2 }}
-                className="text-xl sm:text-2xl text-gray-300 min-h-[3rem] flex items-center justify-center lg:justify-start content-spacing"
+                className="text-xl sm:text-2xl text-gray-300 min-h-[3rem] flex items-center justify-center lg:justify-start content-spacing-lg"
               >
                 <motion.span
                   key="typing-text"
@@ -277,7 +277,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 1.8 }}
-                className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed content-spacing-lg"
+                className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed content-spacing-2xl"
               >
                 Crafting world-class digital experiences with cutting-edge technologies. 
                 I transform ideas into powerful, scalable solutions that make a difference.
@@ -288,7 +288,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 2.1 }}
-                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 content-spacing"
+                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 content-spacing-lg"
               >
                 <motion.button
                   onClick={scrollToContact}
@@ -296,10 +296,8 @@ export default function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="relative z-10 flex items-center space-x-2">
-                    <Mail size={20} />
-                    <span>Let's Connect</span>
-                  </span>
+                  <Mail size={20} />
+                  <span>Let's Connect</span>
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-[#3a9ca1] to-[#4fc1c6]"
                     initial={{ x: "100%" }}
@@ -314,10 +312,8 @@ export default function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="flex items-center space-x-2">
-                    <Download size={20} />
-                    <span>View Resume</span>
-                  </span>
+                  <Download size={20} />
+                  <span>View Resume</span>
                 </motion.button>
               </motion.div>
 

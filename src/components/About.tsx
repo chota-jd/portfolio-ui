@@ -82,7 +82,7 @@ export default function About() {
     <section 
       ref={ref}
       id="about" 
-      className="section-padding bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
+      className="section-padding-lg bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -117,11 +117,11 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center content-spacing-xl"
+          className="text-center content-spacing-2xl"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-lg"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl"
           >
             About <span className="text-gradient">Me</span>
           </motion.h2>
@@ -134,7 +134,7 @@ export default function About() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 grid-gap-xl content-spacing-xl">
+        <div className="grid lg:grid-cols-2 grid-gap-2xl content-spacing-2xl">
           {/* Personal Story */}
           <motion.div
             variants={containerVariants}

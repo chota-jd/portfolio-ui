@@ -131,7 +131,7 @@ export default function Contact() {
     <section 
       ref={ref}
       id="contact" 
-      className="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
+      className="section-padding-lg bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
     >
       {/* Background Animation */}
       <div className="absolute inset-0">
@@ -162,11 +162,11 @@ export default function Contact() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center content-spacing-xl"
+          className="text-center content-spacing-2xl"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-lg"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl"
           >
             Let's <span className="text-gradient">Connect</span>
           </motion.h2>
@@ -179,7 +179,7 @@ export default function Contact() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 grid-gap-xl">
+        <div className="grid lg:grid-cols-2 grid-gap-2xl">
           {/* Contact Info */}
           <motion.div
             variants={containerVariants}
