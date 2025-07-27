@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics, type Analytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
+import emailjs from '@emailjs/browser';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -15,6 +16,14 @@ const firebaseConfig = {
   measurementId: "G-DLNVPSPP9T"
 };
 
+// EmailJS Configuration
+// Get these values from your EmailJS dashboard at https://www.emailjs.com/
+const emailjsConfig = {
+  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'demo_public_key',
+  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'demo_service',
+  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'demo_template',
+};
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
@@ -22,9 +31,13 @@ const app = initializeApp(firebaseConfig);
 let analytics: Analytics | null = null;
 if (typeof window !== 'undefined') {
   analytics = getAnalytics(app);
+  // Initialize EmailJS only if we have a valid public key
+  if (emailjsConfig.publicKey !== 'demo_public_key') {
+    emailjs.init(emailjsConfig.publicKey);
+  }
 }
 
 // Initialize Firestore
 const db = getFirestore(app);
 
-export { app, analytics, db };
+export { app, analytics, db, emailjs, emailjsConfig };
