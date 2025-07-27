@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { useRef } from 'react';
 import { 
   Code2, 
@@ -55,7 +55,7 @@ export default function About() {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -66,7 +66,7 @@ export default function About() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,

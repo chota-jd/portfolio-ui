@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Menu, X, Home, User, Briefcase, Code, Mail, ExternalLink } from 'lucide-react';
 
 const navItems = [
@@ -16,6 +16,8 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -187,11 +189,9 @@ export default function Navigation() {
       {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#4fc1c6] to-[#3a9ca1] z-50 origin-left"
-        initial={{ scaleX: 0 }}
         style={{
-          scaleX: typeof window !== 'undefined' ? window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) : 0
+          scaleX: scrollYProgress
         }}
-        transition={{ type: "spring", stiffness: 400, damping: 40 }}
       />
     </>
   );

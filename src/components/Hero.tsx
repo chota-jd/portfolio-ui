@@ -109,9 +109,11 @@ export default function Hero() {
         {/* Interactive gradient follow mouse */}
         <motion.div
           className="absolute w-96 h-96 bg-gradient-radial from-[#4fc1c6]/20 to-transparent rounded-full blur-3xl pointer-events-none"
-          style={{
+          animate={{
             left: `${mousePosition.x}%`,
             top: `${mousePosition.y}%`,
+          }}
+          style={{
             transform: 'translate(-50%, -50%)',
           }}
           transition={{ type: "spring", stiffness: 50, damping: 30 }}
@@ -159,14 +161,27 @@ export default function Hero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#4fc1c6] to-[#3a9ca1] rounded-full p-1 glow">
                   <div className="w-full h-full bg-black rounded-full p-2">
-                    <Image
-                      src="/profile.jpg"
-                      alt="Profile"
-                      width={320}
-                      height={320}
-                      className="w-full h-full object-cover rounded-full"
-                      priority
-                    />
+                    <div className="w-full h-full rounded-full overflow-hidden">
+                      <svg 
+                        width="100%" 
+                        height="100%" 
+                        viewBox="0 0 400 400" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-full h-full object-cover"
+                      >
+                        <rect width="400" height="400" fill="#1a1a1a"/>
+                        <circle cx="200" cy="160" r="60" fill="#4fc1c6"/>
+                        <circle cx="200" cy="160" r="45" fill="#1a1a1a"/>
+                        <circle cx="185" cy="150" r="3" fill="#4fc1c6"/>
+                        <circle cx="215" cy="150" r="3" fill="#4fc1c6"/>
+                        <path d="M185 170 C195 180, 205 180, 215 170" stroke="#4fc1c6" strokeWidth="2" fill="none"/>
+                        <rect x="170" y="240" width="60" height="80" fill="#4fc1c6" rx="8"/>
+                        <rect x="175" y="245" width="50" height="70" fill="#1a1a1a" rx="4"/>
+                        <text x="200" y="350" textAnchor="middle" fill="#4fc1c6" fontFamily="Arial" fontSize="16" fontWeight="bold">YOUR PHOTO</text>
+                        <text x="200" y="370" textAnchor="middle" fill="#666" fontFamily="Arial" fontSize="12">Replace this placeholder</text>
+                      </svg>
+                    </div>
                   </div>
                 </div>
                 

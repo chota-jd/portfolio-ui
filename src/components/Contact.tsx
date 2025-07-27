@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -20,7 +20,7 @@ import {
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { submitContactForm, resetForm, type ContactFormData } from '../store/apps/contactMe';
 
-const schema = yup.object({
+const schema = yup.object().shape({
   name: yup.string().required('Name is required').min(2, 'Name must be at least 2 characters'),
   email: yup.string().required('Email is required').email('Please enter a valid email'),
   phone: yup.string().optional(),
@@ -95,7 +95,7 @@ export default function Contact() {
     { icon: Mail, href: 'mailto:hello@chiragdev.com', label: 'Email', color: 'hover:text-[#4fc1c6]' },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -106,7 +106,7 @@ export default function Contact() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
