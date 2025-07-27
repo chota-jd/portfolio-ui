@@ -273,7 +273,7 @@ export default function Experience() {
 
         {/* Experience Grid */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-gap-lg max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-gap-xl max-w-7xl mx-auto">
             {experiences.map((experience, index) => (
               <ExperienceCard 
                 key={experience.id} 

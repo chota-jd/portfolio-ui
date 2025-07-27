@@ -136,7 +136,9 @@ export default function Projects() {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative overflow-hidden rounded-2xl bg-gray-900/80 backdrop-blur-sm border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-500"
+      className={`group relative overflow-hidden rounded-2xl bg-gray-900/80 backdrop-blur-sm border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-500 ${
+        project.featured ? 'md:col-span-2' : ''
+      }`}
       whileHover={{ y: -10, scale: 1.02 }}
     >
       {/* Background Gradient */}
@@ -339,7 +341,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-gap-lg max-w-7xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-gap-xl max-w-7xl mx-auto"
         >
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
