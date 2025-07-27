@@ -65,7 +65,7 @@ export default function Navigation() {
         }`}
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}

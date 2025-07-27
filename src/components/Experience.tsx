@@ -243,7 +243,7 @@ export default function Experience() {
     <section 
       ref={ref}
       id="experience" 
-      className="section-padding bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
+      className="section-padding-lg bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -266,11 +266,11 @@ export default function Experience() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center content-spacing-xl"
+          className="text-center content-spacing-2xl"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-lg"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl"
           >
             My <span className="text-gradient">Journey</span>
           </motion.h2>
@@ -288,7 +288,7 @@ export default function Experience() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 md:grid-cols-4 grid-gap-lg content-spacing-xl"
+          className="grid grid-cols-2 md:grid-cols-4 grid-gap-xl content-spacing-2xl"
         >
           {stats.map((stat, index) => (
                       <motion.div
@@ -313,7 +313,7 @@ export default function Experience() {
 
         {/* Experience Timeline */}
         <div className="relative">
-          <div className="grid-gap-xl">
+          <div className="space-y-24 lg:space-y-32">
             {experiences.map((experience, index) => (
               <ExperienceCard 
                 key={experience.id} 

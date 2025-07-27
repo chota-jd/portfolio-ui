@@ -37,17 +37,39 @@ export default function Home() {
       </button>
 
       <Navigation />
+      
+      {/* Hero Section */}
       <Hero />
+      
+      {/* Section Divider */}
+      <div className="section-divider"></div>
+      
+      {/* About Section */}
       <About />
+      
+      {/* Section Divider */}
+      <div className="section-divider"></div>
+      
+      {/* Experience Section */}
       <Experience />
+      
+      {/* Section Divider */}
+      <div className="section-divider"></div>
+      
+      {/* Projects Section */}
       <Projects />
+      
+      {/* Section Divider */}
+      <div className="section-divider"></div>
+      
+      {/* Contact Section */}
       <Contact />
       
       {/* Footer */}
       <footer className="section-padding bg-gray-900 border-t border-gray-800">
         <div className="container-custom">
-          <div className="text-center content-spacing">
-            <p className="text-gray-400 text-spacing leading-relaxed">
+          <div className="text-center">
+            <p className="text-gray-400 leading-relaxed">
               © 2024 Chirag. Built with ❤️ using Next.js, Tailwind CSS, and Framer Motion.
             </p>
           </div>
