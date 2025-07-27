@@ -1,0 +1,45 @@
+.containerCustom {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  padding-left: 12rem; /* px-48 equivalent */
+  padding-right: 12rem; /* px-48 equivalent */
+}
+
+@media (min-width: 640px) {
+  .containerCustom {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .containerCustom {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .containerCustom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerCustom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerCustom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

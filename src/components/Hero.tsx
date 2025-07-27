@@ -4,6 +4,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, Download, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
+import Container from './Container'; // CSS Modules approach
+// import StyledContainer from './StyledContainer'; // Styled-components approach
+// import TailwindContainer from './TailwindContainer'; // Pure Tailwind approach
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -120,7 +123,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 container-custom text-center">
+      <Container className="relative z-10 text-center">
         <div className="flex flex-col lg:flex-row items-center justify-between grid-gap-xl lg:space-y-0">
           
           {/* Profile Image */}
@@ -343,7 +346,7 @@ export default function Hero() {
               </motion.div>
             </div>
           </div>
-        </div>
+        </Container>
 
         {/* Scroll Indicator */}
         <motion.div
