@@ -9,9 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        // Our main accent color
         accent: {
           DEFAULT: '#4fc1c6',
           50: '#f0fdfd',
@@ -25,6 +22,9 @@ const config: Config = {
           800: '#155e75',
           900: '#164e63',
         },
+      },
+      fontFamily: {
+        sans: ['system-ui', '-apple-system', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
