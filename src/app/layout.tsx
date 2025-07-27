@@ -1,41 +1,11 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+'use client';
 
-const inter = Inter({ subsets: ["latin"] });
+import { Inter } from 'next/font/google';
+import { Provider } from 'react-redux';
+import { store } from '../store';
+import './globals.css';
 
-export const metadata: Metadata = {
-  title: "Your Name - Full Stack Developer Portfolio",
-  description: "Passionate full-stack developer specializing in Next.js, React, Angular, Svelte, and modern web technologies. Building responsive, high-performance web applications with clean code and scalable architecture.",
-  keywords: ["Full Stack Developer", "Next.js", "React", "Angular", "Svelte", "Tailwind CSS", "Firebase", "MySQL", "Web Development"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://yourwebsite.com",
-    title: "Your Name - Full Stack Developer Portfolio",
-    description: "Passionate full-stack developer building innovative web solutions",
-    siteName: "Your Name Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Your Name - Full Stack Developer Portfolio",
-    description: "Passionate full-stack developer building innovative web solutions",
-    creator: "@yourusername",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
@@ -43,11 +13,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>
-        <div className="min-h-screen bg-black text-white">
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <title>Portfolio - Passionate Developer</title>
+        <meta name="description" content="A passionate and curious developer's portfolio showcasing world-class projects and skills." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className={`${inter.className} bg-black text-white overflow-x-hidden`}>
+        <Provider store={store}>
           {children}
-        </div>
+        </Provider>
       </body>
     </html>
   );
