@@ -11,37 +11,24 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        // Complete YELLOW color palette
-        primary: {
-          50: '#fefce8',
-          100: '#fef9c3', 
-          200: '#fef08a',
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',  // Main yellow color
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
-          900: '#713f12',
-        },
-        // Accent color - our main YELLOW theme color
+        // Our main accent color
         accent: {
-          DEFAULT: '#eab308',
-          50: '#fefce8',
-          100: '#fef9c3',
-          200: '#fef08a', 
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
-          900: '#713f12',
+          DEFAULT: '#4fc1c6',
+          50: '#f0fdfd',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#4fc1c6',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
         },
-        // Theme color shortcuts
-        theme: '#eab308',
-        'theme-light': '#facc15',
-        'theme-dark': '#ca8a04',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -52,6 +39,8 @@ const config: Config = {
         'bounce-slow': 'bounce 3s infinite',
         'gradient-shift': 'gradientShift 3s ease infinite',
         'glow-pulse': 'glowPulse 2s ease-in-out infinite alternate',
+        'spin-slow': 'spin 20s linear infinite',
+        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -93,18 +82,22 @@ const config: Config = {
           '50%': { backgroundPosition: '100% 50%' },
         },
         glowPulse: {
-          '0%': { boxShadow: '0 0 20px rgba(234, 179, 8, 0.3)' },
-          '100%': { boxShadow: '0 0 30px rgba(234, 179, 8, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(79, 193, 198, 0.3)' },
+          '100%': { boxShadow: '0 0 30px rgba(79, 193, 198, 0.6)' },
+        },
+        bounceGentle: {
+          '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-10px)' },
+          '60%': { transform: 'translateY(-5px)' },
         },
       },
       boxShadow: {
-        'theme': '0 0 20px rgba(234, 179, 8, 0.3)',
-        'theme-lg': '0 0 40px rgba(234, 179, 8, 0.5)',
-        'theme-xl': '0 0 60px rgba(234, 179, 8, 0.7)',
+        'accent': '0 0 20px rgba(79, 193, 198, 0.3)',
+        'accent-lg': '0 0 40px rgba(79, 193, 198, 0.5)',
+        'accent-xl': '0 0 60px rgba(79, 193, 198, 0.7)',
       },
-      textShadow: {
-        'theme': '0 0 15px #eab308',
-        'theme-lg': '0 0 25px #eab308',
+      backdropBlur: {
+        'xs': '2px',
       },
     },
   },
