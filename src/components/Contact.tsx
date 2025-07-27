@@ -2,7 +2,7 @@
 
 import { motion, useInView, type Variants } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { 
@@ -41,10 +41,18 @@ export default function Contact() {
     reset,
     formState: { errors }
   } = useForm<ContactFormData>({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      subject: '',
+      message: ''
+    }
   });
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
     try {
       await dispatch(submitContactForm(data)).unwrap();
       reset();
