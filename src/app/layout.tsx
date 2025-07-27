@@ -19,7 +19,7 @@ export default function RootLayout({
         <meta name="description" content="A passionate and curious developer's portfolio showcasing world-class projects and skills." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${inter.className} bg-black text-white overflow-x-hidden`}>
+      <body className={`${inter.className} bg-black text-white overflow-x-hidden tracking-tight`}>
         <Provider store={store}>
           {children}
         </Provider>

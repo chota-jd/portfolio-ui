@@ -299,7 +299,7 @@ export default function Projects() {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl tracking-tight"
           >
             Featured <span className="text-gradient">Projects</span>
           </motion.h2>

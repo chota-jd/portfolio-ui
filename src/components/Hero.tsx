@@ -237,7 +237,7 @@ export default function Hero() {
                 </motion.p>
                 
                 <motion.h1
-                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold heading-spacing-xl"
+                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold heading-spacing-xl tracking-tight"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.5 }}

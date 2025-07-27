@@ -230,7 +230,7 @@ export default function Experience() {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl tracking-tight"
           >
             My <span className="text-gradient">Journey</span>
           </motion.h2>

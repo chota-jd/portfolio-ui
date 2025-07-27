@@ -166,7 +166,7 @@ export default function Contact() {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-xl tracking-tight"
           >
             Let's <span className="text-gradient">Connect</span>
           </motion.h2>
