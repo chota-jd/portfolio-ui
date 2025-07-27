@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Custom CSS Variables */
 :root {
@@ -33,42 +35,46 @@
 }
 
 /* Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
 
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-  letter-spacing: -0.01em;
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-}
+  ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
-  border-radius: 4px;
-}
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-dark);
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-dark);
+  }
 }
 
 /* Layout and Spacing Utilities */
@@ -273,41 +279,30 @@ body {
   /* Enhanced typography spacing */
   .heading-spacing {
     margin-bottom: var(--spacing-md);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
   }
   
   .heading-spacing-sm {
     margin-bottom: var(--spacing-sm);
-    line-height: 1.3;
-    letter-spacing: -0.015em;
   }
   
   .heading-spacing-lg {
     margin-bottom: var(--spacing-lg);
-    line-height: 1.1;
-    letter-spacing: -0.025em;
   }
   
   .heading-spacing-xl {
     margin-bottom: var(--spacing-xl);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
   }
   
   .text-spacing {
     margin-bottom: var(--spacing-sm);
-    line-height: 1.7;
   }
   
   .text-spacing-sm {
     margin-bottom: var(--spacing-xs);
-    line-height: 1.6;
   }
   
   .text-spacing-lg {
     margin-bottom: var(--spacing-md);
-    line-height: 1.8;
   }
 
   /* Section dividers */
