@@ -18,6 +18,30 @@ export default function Hero() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  // Fixed particle positions to avoid hydration mismatch
+  const particlePositions = [
+    { left: 10, top: 20 },
+    { left: 25, top: 80 },
+    { left: 40, top: 15 },
+    { left: 55, top: 90 },
+    { left: 70, top: 35 },
+    { left: 85, top: 60 },
+    { left: 15, top: 50 },
+    { left: 30, top: 25 },
+    { left: 45, top: 75 },
+    { left: 60, top: 45 },
+    { left: 75, top: 85 },
+    { left: 90, top: 10 },
+    { left: 20, top: 65 },
+    { left: 35, top: 40 },
+    { left: 50, top: 95 },
+    { left: 65, top: 30 },
+    { left: 80, top: 70 },
+    { left: 95, top: 55 },
+    { left: 12, top: 85 },
+    { left: 78, top: 18 },
+  ];
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
@@ -85,23 +109,23 @@ export default function Hero() {
           }}
         />
 
-        {/* Floating particles */}
-        {[...Array(20)].map((_, i) => (
+        {/* Floating particles with fixed positions */}
+        {particlePositions.map((position, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-[#4fc1c6]/30 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${position.left}%`,
+              top: `${position.top}%`,
             }}
             animate={{
               y: [0, -100, 0],
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
+              duration: (i % 3 + 1) * 5 + 10, // Deterministic duration based on index
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: i * 0.5, // Deterministic delay based on index
             }}
           />
         ))}
