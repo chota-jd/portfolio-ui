@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* Custom theme configuration for Tailwind v4 */
+@theme {
+  --font-family-sans: system-ui, -apple-system, sans-serif;
+  
+  --color-accent: #4fc1c6;
+  --color-accent-50: #f0fdfd;
+  --color-accent-100: #ccfbf1;
+  --color-accent-200: #99f6e4;
+  --color-accent-300: #5eead4;
+  --color-accent-400: #2dd4bf;
+  --color-accent-500: #4fc1c6;
+  --color-accent-600: #0891b2;
+  --color-accent-700: #0e7490;
+  --color-accent-800: #155e75;
+  --color-accent-900: #164e63;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-bounce-slow: bounce 3s infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-bounce-gentle: bounceGentle 2s ease-in-out infinite;
+}
+
 /* Custom CSS Variables */
 :root {
   --accent-color: #4fc1c6;
@@ -77,22 +100,51 @@ body {
 
   /* Button Styles */
   .btn-primary {
-    @apply bg-[#4fc1c6] text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105;
+    background-color: #4fc1c6;
+    color: #000;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    transform: scale(1);
     box-shadow: 0 4px 15px rgba(79, 193, 198, 0.3);
   }
 
   .btn-primary:hover {
+    transform: scale(1.05);
     box-shadow: 0 8px 25px rgba(79, 193, 198, 0.5);
   }
 
   .btn-secondary {
-    @apply border-2 border-[#4fc1c6] text-[#4fc1c6] font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:bg-[#4fc1c6] hover:text-black hover:scale-105;
+    border: 2px solid #4fc1c6;
+    color: #4fc1c6;
+    background: transparent;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+
+  .btn-secondary:hover {
+    background-color: #4fc1c6;
+    color: #000;
+    transform: scale(1.05);
   }
 
   /* Form Styles */
   .form-input {
-    @apply w-full p-4 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-400 transition-all duration-300;
-    border-color: #374151;
+    width: 100%;
+    padding: 1rem;
+    background: #111827;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .form-input::placeholder {
+    color: #9ca3af;
   }
 
   .form-input:focus {
@@ -102,8 +154,19 @@ body {
   }
 
   .form-textarea {
-    @apply w-full p-4 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-400 transition-all duration-300 min-h-[120px] resize-y;
-    border-color: #374151;
+    width: 100%;
+    padding: 1rem;
+    background: #111827;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    color: #fff;
+    min-height: 120px;
+    resize: vertical;
+    transition: all 0.3s ease;
+  }
+
+  .form-textarea::placeholder {
+    color: #9ca3af;
   }
 
   .form-textarea:focus {
@@ -114,11 +177,13 @@ body {
 
   /* Card hover effects */
   .card-hover {
-    @apply transition-all duration-300 transform hover:scale-105;
+    transition: all 0.3s ease;
+    transform: scale(1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .card-hover:hover {
+    transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(79, 193, 198, 0.2);
   }
 
@@ -269,6 +334,19 @@ body {
 
   .spinner {
     animation: spin 1s linear infinite;
+  }
+
+  /* Bounce gentle keyframes */
+  @keyframes bounceGentle {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
   }
 
   /* Section animations */
