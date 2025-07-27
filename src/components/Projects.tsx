@@ -182,8 +182,8 @@ export default function Projects() {
       </div>
 
       {/* Project Content */}
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-3">
+      <div className="card-padding-lg">
+        <div className="flex items-start justify-between content-spacing">
           <h3 className="text-xl font-bold text-white group-hover:text-[#4fc1c6] transition-colors duration-300">
             {project.title}
           </h3>
@@ -198,12 +198,12 @@ export default function Projects() {
           )}
         </div>
         
-        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+        <p className="text-gray-400 text-sm leading-relaxed content-spacing">
           {project.description}
         </p>
 
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 content-spacing">
           {project.technologies.map((tech, techIndex) => (
             <motion.span
               key={tech}
@@ -218,12 +218,12 @@ export default function Projects() {
         </div>
 
         {/* Action Links */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-4">
           <motion.a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-gray-400 hover:text-[#4fc1c6] transition-colors duration-200"
+            className="flex items-center gap-2 text-gray-400 hover:text-[#4fc1c6] transition-colors duration-200"
             whileHover={{ x: 5 }}
           >
             <Github size={16} />
@@ -233,7 +233,7 @@ export default function Projects() {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-gray-400 hover:text-[#4fc1c6] transition-colors duration-200"
+            className="flex items-center gap-2 text-gray-400 hover:text-[#4fc1c6] transition-colors duration-200"
             whileHover={{ x: 5 }}
           >
             <ExternalLink size={16} />
@@ -248,7 +248,7 @@ export default function Projects() {
     <section 
       ref={ref}
       id="projects" 
-      className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
+      className="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -290,16 +290,16 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container-custom relative">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center content-spacing-xl"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-lg"
           >
             Featured <span className="text-gradient">Projects</span>
           </motion.h2>
@@ -317,7 +317,7 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center grid-gap-sm content-spacing-lg"
         >
           {filters.map((filter, index) => (
             <motion.button
@@ -341,7 +341,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 grid-gap-lg"
         >
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
@@ -353,7 +353,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-center mt-16"
+          className="text-center content-spacing-xl"
         >
           <motion.button
             className="btn-primary group"

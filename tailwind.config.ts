@@ -23,6 +23,16 @@ const config: Config = {
           900: '#164e63',
         },
       },
+      spacing: {
+        'xs': '0.5rem',
+        'sm': '1rem',
+        'md': '1.5rem',
+        'lg': '2rem',
+        'xl': '3rem',
+        '2xl': '4rem',
+        '3xl': '6rem',
+        '4xl': '8rem',
+      },
       fontFamily: {
         sans: ['system-ui', '-apple-system', 'sans-serif'],
       },

@@ -17,7 +17,7 @@ export default function Home() {
       <div>
         <button 
           onClick={() => setShowTest(false)}
-          className="fixed top-4 right-4 z-50 bg-[#4fc1c6] text-black px-4 py-2 rounded-lg font-semibold"
+          className="fixed top-4 right-4 z-50 bg-[#4fc1c6] text-black btn-primary"
         >
           Back to Portfolio
         </button>
@@ -31,7 +31,7 @@ export default function Home() {
       {/* Test Button */}
       <button 
         onClick={() => setShowTest(true)}
-        className="fixed bottom-4 right-4 z-50 bg-[#4fc1c6] text-black px-4 py-2 rounded-lg font-semibold shadow-lg hover:scale-105 transition-transform"
+        className="fixed bottom-4 right-4 z-50 bg-[#4fc1c6] text-black btn-primary shadow-lg hover:scale-105 transition-transform"
       >
         🧪 CSS Test
       </button>
@@ -44,10 +44,10 @@ export default function Home() {
       <Contact />
       
       {/* Footer */}
-      <footer className="py-8 bg-gray-900 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-gray-400">
+      <footer className="section-padding bg-gray-900 border-t border-gray-800">
+        <div className="container-custom">
+          <div className="text-center content-spacing">
+            <p className="text-gray-400 text-spacing leading-relaxed">
               © 2024 Chirag. Built with ❤️ using Next.js, Tailwind CSS, and Framer Motion.
             </p>
           </div>

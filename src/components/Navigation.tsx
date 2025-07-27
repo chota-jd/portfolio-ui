@@ -64,7 +64,7 @@ export default function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-custom">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <motion.div
@@ -83,7 +83,7 @@ export default function Navigation() {
 
             {/* Desktop Menu */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+              <div className="ml-10 flex items-baseline gap-8">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.name}
@@ -91,15 +91,15 @@ export default function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     onClick={() => scrollToSection(item.href)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
-                      activeSection === item.href.substring(1)
-                        ? 'text-[#4fc1c6]'
-                        : 'text-gray-300 hover:text-[#4fc1c6]'
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span className="relative z-10 flex items-center space-x-2">
+                                          className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+                        activeSection === item.href.substring(1)
+                          ? 'text-[#4fc1c6]'
+                          : 'text-gray-300 hover:text-[#4fc1c6]'
+                      }`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span className="relative z-10 flex items-center gap-2">
                       <item.icon size={16} />
                       <span>{item.name}</span>
                     </span>
@@ -153,7 +153,7 @@ export default function Navigation() {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="md:hidden backdrop-blur-glass border-t border-[#4fc1c6]/20"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1">
+              <div className="px-2 pt-2 pb-3 grid-gap-sm">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.name}
@@ -161,7 +161,7 @@ export default function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     onClick={() => scrollToSection(item.href)}
-                    className={`flex items-center space-x-3 w-full px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
+                    className={`flex items-center gap-3 w-full px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
                       activeSection === item.href.substring(1)
                         ? 'text-[#4fc1c6] bg-[#4fc1c6]/10'
                         : 'text-gray-300 hover:text-[#4fc1c6] hover:bg-[#4fc1c6]/5'
