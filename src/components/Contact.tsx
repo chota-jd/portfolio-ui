@@ -35,6 +35,25 @@ export default function Contact() {
   const dispatch = useAppDispatch();
   const { isSubmitting, submitted, error } = useAppSelector(state => state.contact);
 
+  // Fixed particle positions to avoid hydration mismatch
+  const particlePositions = [
+    { left: 15, top: 25 },
+    { left: 35, top: 80 },
+    { left: 55, top: 15 },
+    { left: 75, top: 90 },
+    { left: 20, top: 60 },
+    { left: 85, top: 35 },
+    { left: 45, top: 75 },
+    { left: 65, top: 45 },
+    { left: 25, top: 85 },
+    { left: 50, top: 30 },
+    { left: 80, top: 65 },
+    { left: 10, top: 50 },
+    { left: 90, top: 20 },
+    { left: 40, top: 95 },
+    { left: 70, top: 10 },
+  ];
+
   const {
     register,
     handleSubmit,
@@ -135,13 +154,13 @@ export default function Contact() {
     >
       {/* Background Animation */}
       <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+        {particlePositions.map((position, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-[#4fc1c6]/20 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${position.left}%`,
+              top: `${position.top}%`,
             }}
             animate={{
               y: [0, -50, 0],
@@ -149,9 +168,9 @@ export default function Contact() {
               scale: [0, 1, 0],
             }}
             transition={{
-              duration: Math.random() * 8 + 4,
+              duration: (i % 3 + 1) * 4 + 4, // Deterministic duration
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: i * 0.3, // Deterministic delay
             }}
           />
         ))}
