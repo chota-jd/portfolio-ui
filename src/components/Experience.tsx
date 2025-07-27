@@ -157,7 +157,7 @@ export default function Experience() {
       {/* Content Card */}
       <div className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12 lg:ml-auto'}`}>
         <motion.div
-          className="bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-500 group relative overflow-hidden"
+          className="bg-gray-900/80 backdrop-blur-sm rounded-2xl card-padding-lg border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-500 group relative overflow-hidden"
           whileHover={{ scale: 1.02, y: -5 }}
         >
           {/* Background Gradient */}
@@ -165,25 +165,25 @@ export default function Experience() {
           
           {/* Company Icon */}
           <motion.div
-            className={`w-16 h-16 bg-gradient-to-br ${experience.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+            className={`w-16 h-16 bg-gradient-to-br ${experience.color} rounded-2xl flex items-center justify-center content-spacing group-hover:scale-110 transition-transform duration-300`}
             whileHover={{ rotate: 5 }}
           >
             <experience.icon className="text-white" size={24} />
           </motion.div>
 
           {/* Header */}
-          <div className="mb-4">
-            <h3 className="text-xl font-bold text-white group-hover:text-[#4fc1c6] transition-colors duration-300">
+          <div className="content-spacing">
+            <h3 className="text-xl font-bold text-white group-hover:text-[#4fc1c6] transition-colors duration-300 text-spacing">
               {experience.position}
             </h3>
-            <p className="text-[#4fc1c6] font-medium">{experience.company}</p>
+            <p className="text-[#4fc1c6] font-medium text-spacing">{experience.company}</p>
             
             <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-gray-400">
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center gap-1">
                 <Calendar size={14} />
                 <span>{experience.period}</span>
               </div>
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center gap-1">
                 <MapPin size={14} />
                 <span>{experience.location}</span>
               </div>
@@ -194,21 +194,21 @@ export default function Experience() {
           </div>
 
           {/* Description */}
-          <p className="text-gray-400 leading-relaxed mb-4">
+          <p className="text-gray-400 leading-relaxed content-spacing">
             {experience.description}
           </p>
 
           {/* Achievements */}
-          <div className="mb-4">
-            <h4 className="text-white font-medium mb-2 flex items-center space-x-2">
+          <div className="content-spacing">
+            <h4 className="text-white font-medium text-spacing flex items-center gap-2">
               <TrendingUp size={16} className="text-[#4fc1c6]" />
               <span>Key Achievements</span>
             </h4>
-            <ul className="space-y-2">
+            <ul className="grid-gap-sm">
               {experience.achievements.map((achievement, achIndex) => (
                 <motion.li
                   key={achIndex}
-                  className="flex items-start space-x-2 text-sm text-gray-400"
+                  className="flex items-start gap-2 text-sm text-gray-400"
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                   transition={{ duration: 0.5, delay: index * 0.2 + achIndex * 0.1 + 0.8 }}
@@ -243,7 +243,7 @@ export default function Experience() {
     <section 
       ref={ref}
       id="experience" 
-      className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
+      className="section-padding bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -261,16 +261,16 @@ export default function Experience() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container-custom relative">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center content-spacing-xl"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-lg"
           >
             My <span className="text-gradient">Journey</span>
           </motion.h2>
@@ -288,32 +288,32 @@ export default function Experience() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
+          className="grid grid-cols-2 md:grid-cols-4 grid-gap-lg content-spacing-xl"
         >
           {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              variants={itemVariants}
-              className="text-center p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-300 group"
-              whileHover={{ scale: 1.05, y: -5 }}
+                      <motion.div
+            key={stat.label}
+            variants={itemVariants}
+            className="text-center card-padding-lg bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-300 group"
+            whileHover={{ scale: 1.05, y: -5 }}
+          >
+            <stat.icon className={`${stat.color} mx-auto content-spacing group-hover:scale-110 transition-transform duration-300`} size={32} />
+            <motion.h3 
+              className="text-3xl font-bold text-white text-spacing"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
             >
-              <stat.icon className={`${stat.color} mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`} size={32} />
-              <motion.h3 
-                className="text-3xl font-bold text-white mb-1"
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              >
-                {stat.value}
-              </motion.h3>
-              <p className="text-gray-400 text-sm">{stat.label}</p>
-            </motion.div>
+              {stat.value}
+            </motion.h3>
+            <p className="text-gray-400 text-sm">{stat.label}</p>
+          </motion.div>
           ))}
         </motion.div>
 
         {/* Experience Timeline */}
         <div className="relative">
-          <div className="space-y-16">
+          <div className="grid-gap-xl">
             {experiences.map((experience, index) => (
               <ExperienceCard 
                 key={experience.id} 

@@ -131,7 +131,7 @@ export default function Contact() {
     <section 
       ref={ref}
       id="contact" 
-      className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
+      className="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
     >
       {/* Background Animation */}
       <div className="absolute inset-0">
@@ -157,16 +157,16 @@ export default function Contact() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container-custom relative">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center content-spacing-xl"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-lg"
           >
             Let's <span className="text-gradient">Connect</span>
           </motion.h2>
@@ -179,31 +179,31 @@ export default function Contact() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 grid-gap-xl">
           {/* Contact Info */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="space-y-8"
+            className="grid-gap-lg"
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
-              <p className="text-gray-400 leading-relaxed mb-8">
+              <h3 className="text-2xl font-bold text-white heading-spacing">Get in Touch</h3>
+              <p className="text-gray-400 leading-relaxed content-spacing-lg">
                 I'm always open to discussing new opportunities, creative projects, or potential collaborations. 
                 Whether you have a question, want to start a project, or just want to say hello, I'd love to hear from you.
               </p>
             </motion.div>
 
             {/* Contact Details */}
-            <motion.div variants={itemVariants} className="space-y-6">
+            <motion.div variants={itemVariants} className="grid-gap-lg">
               {contactInfo.map((item, index) => (
                 <motion.a
                   key={item.label}
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="flex items-center space-x-4 p-4 rounded-xl border border-gray-800 hover:border-[#4fc1c6]/50 bg-gray-900/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 group"
+                  className="flex items-center gap-4 card-padding rounded-xl border border-gray-800 hover:border-[#4fc1c6]/50 bg-gray-900/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 group"
                   whileHover={{ x: 5 }}
                   initial={{ opacity: 0, x: -50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -213,7 +213,7 @@ export default function Contact() {
                     <item.icon size={20} />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">{item.label}</p>
+                    <p className="text-sm text-gray-400 text-spacing">{item.label}</p>
                     <p className="text-white font-medium">{item.value}</p>
                   </div>
                 </motion.a>
@@ -222,8 +222,8 @@ export default function Contact() {
 
             {/* Social Links */}
             <motion.div variants={itemVariants} className="pt-8">
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
+              <h4 className="text-lg font-semibold text-white heading-spacing">Follow Me</h4>
+              <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
@@ -253,24 +253,24 @@ export default function Contact() {
           >
             <motion.div
               variants={itemVariants}
-              className="bg-gray-900/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 relative overflow-hidden"
+              className="bg-gray-900/80 backdrop-blur-sm rounded-2xl card-padding-lg border border-gray-800 relative overflow-hidden"
             >
               {/* Form Background Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#4fc1c6]/5 to-transparent opacity-50 pointer-events-none" />
               
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+                <h3 className="text-2xl font-bold text-white heading-spacing">Send a Message</h3>
 
                 {/* Success Message */}
                 {submitted && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg flex items-center space-x-3"
+                    className="content-spacing card-padding bg-green-500/10 border border-green-500/30 rounded-lg flex items-center gap-3"
                   >
                     <CheckCircle className="text-green-500" size={24} />
                     <div>
-                      <p className="text-green-400 font-medium">Message sent successfully!</p>
+                      <p className="text-green-400 font-medium text-spacing">Message sent successfully!</p>
                       <p className="text-green-300 text-sm">I'll get back to you within 24 hours.</p>
                     </div>
                     <button
@@ -287,17 +287,17 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg flex items-center space-x-3"
+                    className="content-spacing card-padding bg-red-500/10 border border-red-500/30 rounded-lg flex items-center gap-3"
                   >
                     <AlertCircle className="text-red-500" size={24} />
                     <p className="text-red-400">{error}</p>
                   </motion.div>
                 )}
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="grid-gap-lg">
+                  <div className="grid md:grid-cols-2 grid-gap-lg">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-gray-300 text-spacing">
                         Name *
                       </label>
                       <input
@@ -311,7 +311,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-gray-300 text-spacing">
                         Email *
                       </label>
                       <input
@@ -326,9 +326,9 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 grid-gap-lg">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-gray-300 text-spacing">
                         Phone
                       </label>
                       <input
@@ -340,7 +340,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-gray-300 text-spacing">
                         Company
                       </label>
                       <input
@@ -352,7 +352,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 text-spacing">
                       Subject *
                     </label>
                     <input
@@ -366,7 +366,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 text-spacing">
                       Message *
                     </label>
                     <textarea
@@ -387,7 +387,7 @@ export default function Contact() {
                     whileHover={!isSubmitting ? { scale: 1.02 } : {}}
                     whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                   >
-                    <span className="relative z-10 flex items-center justify-center space-x-2">
+                    <span className="relative z-10 flex items-center justify-center gap-2">
                       {isSubmitting ? (
                         <>
                           <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />

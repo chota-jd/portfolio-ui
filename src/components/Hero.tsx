@@ -54,7 +54,7 @@ export default function Hero() {
     <motion.section
       ref={ref}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black section-padding"
       style={{ y, opacity, scale }}
     >
       {/* Animated Background */}
@@ -120,8 +120,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-12">
+      <div className="relative z-10 container-custom text-center">
+        <div className="flex flex-col lg:flex-row items-center justify-between grid-gap-xl lg:space-y-0">
           
           {/* Profile Image */}
           <motion.div
@@ -219,131 +219,133 @@ export default function Hero() {
           </motion.div>
 
           {/* Content */}
-          <div className="lg:w-2/3 space-y-8">
-            {/* Greeting */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-y-2"
-            >
-              <motion.p
-                className="text-[#4fc1c6] text-lg sm:text-xl font-medium"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                👋 Hello, I'm
-              </motion.p>
-              
-              <motion.h1
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold"
+          <div className="lg:w-2/3">
+            <div className="space-y-6 lg:space-y-8">
+              {/* Greeting */}
+              <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="content-spacing"
               >
-                <span className="text-gradient block">Chirag</span>
-                <motion.span
-                  className="block text-white mt-2"
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, delay: 0.8 }}
+                <motion.p
+                  className="text-[#4fc1c6] text-lg sm:text-xl font-medium text-spacing"
+                  animate={{ opacity: [0.7, 1, 0.7] }}
+                  transition={{ duration: 2, repeat: Infinity }}
                 >
-                  Developer
-                </motion.span>
-              </motion.h1>
-            </motion.div>
-
-            {/* Typing Animation */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              className="text-xl sm:text-2xl text-gray-300 min-h-[3rem] flex items-center justify-center lg:justify-start"
-            >
-              <motion.span
-                key="typing-text"
-                initial={{ width: 0 }}
-                animate={{ width: "auto" }}
-                transition={{ duration: 3, delay: 1.5 }}
-                className="overflow-hidden whitespace-nowrap border-r-2 border-[#4fc1c6] pr-1"
-              >
-                Passionate • Curious • Innovative
-              </motion.span>
-            </motion.div>
-
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.8 }}
-              className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
-            >
-              Crafting world-class digital experiences with cutting-edge technologies. 
-              I transform ideas into powerful, scalable solutions that make a difference.
-            </motion.p>
-
-            {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2.1 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6"
-            >
-              <motion.button
-                onClick={scrollToContact}
-                className="btn-primary group relative overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10 flex items-center space-x-2">
-                  <Mail size={20} />
-                  <span>Let's Connect</span>
-                </span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[#3a9ca1] to-[#4fc1c6]"
-                  initial={{ x: "100%" }}
-                  whileHover={{ x: "0%" }}
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                />
-              </motion.button>
-
-              <motion.button
-                onClick={scrollToAbout}
-                className="btn-secondary group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="flex items-center space-x-2">
-                  <Download size={20} />
-                  <span>View Resume</span>
-                </span>
-              </motion.button>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2.4 }}
-              className="flex items-center justify-center lg:justify-start space-x-6"
-            >
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full border-2 border-[#4fc1c6]/30 flex items-center justify-center text-[#4fc1c6] hover:border-[#4fc1c6] hover:bg-[#4fc1c6]/10 transition-all duration-300 group"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                  initial={{ opacity: 0, y: 20 }}
+                  👋 Hello, I'm
+                </motion.p>
+                
+                <motion.h1
+                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold heading-spacing-lg"
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 2.6 + index * 0.1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
                 >
-                  <social.icon size={20} className="group-hover:scale-110 transition-transform duration-200" />
-                </motion.a>
-              ))}
-            </motion.div>
+                  <span className="text-gradient block">Chirag</span>
+                  <motion.span
+                    className="block text-white mt-2"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 0.8 }}
+                  >
+                    Developer
+                  </motion.span>
+                </motion.h1>
+              </motion.div>
+
+              {/* Typing Animation */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.2 }}
+                className="text-xl sm:text-2xl text-gray-300 min-h-[3rem] flex items-center justify-center lg:justify-start content-spacing"
+              >
+                <motion.span
+                  key="typing-text"
+                  initial={{ width: 0 }}
+                  animate={{ width: "auto" }}
+                  transition={{ duration: 3, delay: 1.5 }}
+                  className="overflow-hidden whitespace-nowrap border-r-2 border-[#4fc1c6] pr-1"
+                >
+                  Passionate • Curious • Innovative
+                </motion.span>
+              </motion.div>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.8 }}
+                className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed content-spacing-lg"
+              >
+                Crafting world-class digital experiences with cutting-edge technologies. 
+                I transform ideas into powerful, scalable solutions that make a difference.
+              </motion.p>
+
+              {/* Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 2.1 }}
+                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 content-spacing"
+              >
+                <motion.button
+                  onClick={scrollToContact}
+                  className="btn-primary group relative overflow-hidden"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="relative z-10 flex items-center space-x-2">
+                    <Mail size={20} />
+                    <span>Let's Connect</span>
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-[#3a9ca1] to-[#4fc1c6]"
+                    initial={{ x: "100%" }}
+                    whileHover={{ x: "0%" }}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                </motion.button>
+
+                <motion.button
+                  onClick={scrollToAbout}
+                  className="btn-secondary group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="flex items-center space-x-2">
+                    <Download size={20} />
+                    <span>View Resume</span>
+                  </span>
+                </motion.button>
+              </motion.div>
+
+              {/* Social Links */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 2.4 }}
+                className="flex items-center justify-center lg:justify-start gap-6"
+              >
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full border-2 border-[#4fc1c6]/30 flex items-center justify-center text-[#4fc1c6] hover:border-[#4fc1c6] hover:bg-[#4fc1c6]/10 transition-all duration-300 group"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 2.6 + index * 0.1 }}
+                  >
+                    <social.icon size={20} className="group-hover:scale-110 transition-transform duration-200" />
+                  </motion.a>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
 
@@ -356,7 +358,7 @@ export default function Hero() {
         >
           <motion.button
             onClick={scrollToAbout}
-            className="flex flex-col items-center space-y-2 text-[#4fc1c6] hover:text-white transition-colors duration-300 group"
+            className="flex flex-col items-center gap-2 text-[#4fc1c6] hover:text-white transition-colors duration-300 group"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >

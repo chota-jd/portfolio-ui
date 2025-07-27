@@ -82,7 +82,7 @@ export default function About() {
     <section 
       ref={ref}
       id="about" 
-      className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
+      className="section-padding bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
@@ -112,16 +112,16 @@ export default function About() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container-custom relative">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center content-spacing-xl"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold heading-spacing-lg"
           >
             About <span className="text-gradient">Me</span>
           </motion.h2>
@@ -134,17 +134,17 @@ export default function About() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid lg:grid-cols-2 grid-gap-xl content-spacing-xl">
           {/* Personal Story */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="space-y-6"
+            className="grid-gap-lg"
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-white mb-6">My Journey</h3>
-              <div className="space-y-4 text-gray-400 leading-relaxed">
+              <h3 className="text-2xl font-bold text-white heading-spacing">My Journey</h3>
+              <div className="grid-gap-sm text-gray-400 leading-relaxed">
                 <p>
                   With over 5 years of experience in software development, I've had the privilege of working 
                   on diverse projects ranging from startup MVPs to enterprise-scale applications. My journey 
@@ -166,19 +166,19 @@ export default function About() {
 
             {/* Core Values */}
             <motion.div variants={itemVariants} className="pt-8">
-              <h4 className="text-xl font-semibold text-white mb-6">What Drives Me</h4>
-              <div className="grid grid-cols-2 gap-4">
+              <h4 className="text-xl font-semibold text-white heading-spacing">What Drives Me</h4>
+              <div className="grid grid-cols-2 grid-gap-sm">
                 {values.map((value, index) => (
                   <motion.div
                     key={value.title}
-                    className="p-4 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-300 group"
+                    className="card-padding bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-300 group"
                     whileHover={{ scale: 1.05 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   >
-                    <value.icon className="text-[#4fc1c6] mb-2 group-hover:scale-110 transition-transform duration-300" size={24} />
-                    <h5 className="text-white font-medium mb-1">{value.title}</h5>
+                    <value.icon className="text-[#4fc1c6] content-spacing group-hover:scale-110 transition-transform duration-300" size={24} />
+                    <h5 className="text-white font-medium text-spacing">{value.title}</h5>
                     <p className="text-gray-400 text-sm">{value.description}</p>
                   </motion.div>
                 ))}
@@ -191,11 +191,11 @@ export default function About() {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="space-y-8"
+            className="grid-gap-lg"
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-white mb-6">Skills & Expertise</h3>
-              <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-white heading-spacing">Skills & Expertise</h3>
+              <div className="grid-gap-lg">
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
@@ -204,8 +204,8 @@ export default function About() {
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-between text-spacing">
+                      <div className="flex items-center gap-3">
                         <skill.icon className="text-[#4fc1c6]" size={20} />
                         <span className="text-white font-medium">{skill.name}</span>
                       </div>
@@ -232,7 +232,7 @@ export default function About() {
 
             {/* Technologies */}
             <motion.div variants={itemVariants}>
-              <h4 className="text-xl font-semibold text-white mb-6">Technologies I Love</h4>
+              <h4 className="text-xl font-semibold text-white heading-spacing">Technologies I Love</h4>
               <div className="flex flex-wrap gap-3">
                 {technologies.map((tech, index) => (
                   <motion.span
@@ -263,12 +263,12 @@ export default function About() {
         >
           <motion.h3 
             variants={itemVariants}
-            className="text-2xl font-bold text-white mb-8"
+            className="text-2xl font-bold text-white heading-spacing-lg"
           >
             Fun Facts About Me
           </motion.h3>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 grid-gap-lg">
             {[
               { icon: Coffee, title: '500+', subtitle: 'Cups of Coffee', delay: 0 },
               { icon: Rocket, title: '50+', subtitle: 'Projects Completed', delay: 0.1 },
@@ -277,12 +277,12 @@ export default function About() {
               <motion.div
                 key={fact.title}
                 variants={itemVariants}
-                className="p-6 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-300 group"
+                className="card-padding-lg bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 hover:border-[#4fc1c6]/50 transition-all duration-300 group"
                 whileHover={{ scale: 1.05, y: -5 }}
               >
-                <fact.icon className="text-[#4fc1c6] mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" size={32} />
+                <fact.icon className="text-[#4fc1c6] mx-auto content-spacing group-hover:scale-110 transition-transform duration-300" size={32} />
                 <motion.h4 
-                  className="text-3xl font-bold text-white mb-2"
+                  className="text-3xl font-bold text-white text-spacing"
                   initial={{ opacity: 0 }}
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.5, delay: 1 + fact.delay }}
